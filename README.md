@@ -34,13 +34,19 @@ the data structure in redis ends up looks something like this
   <img src="https://taky.s3.amazonaws.com/21hnn3z4tgo5.png" width="982">
 </p>
 
+and for compound key combinations, if you choose to use them, like this
+
+<p>
+  <img src="https://taky.s3.amazonaws.com/81hnnfy0zqg9.png" width="1116">
+</p>
+
 ## benefits
-- _recording events is fast_ and can be done in a fire-and-forget fashion
-- _queries are fast_ and can be done in real-time with no need for caching in
+- **recording events is fast.** and can be done in a fire-and-forget fashion
+- **queries are fast.** and can be done in real-time with no need for caching in
   most cases
 
 ## limitations
-- *no regression;* the raw event is never stored, it is broken down and digested
+- **no regression.** the raw event is never stored, it is broken down and digested
   into specific locations based on configuration and then is hair-flipped
 
 ## install
