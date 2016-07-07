@@ -9,5 +9,10 @@
     "taky"
   ],
   "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "date-utils": "^1.2.21",
+    "minimatch": "^3.0.2",
+    "taky-redis-members": "^0.1.12",
+    "wegweg": "^0.9.0"
   }
 }
