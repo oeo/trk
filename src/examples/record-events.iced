@@ -3,6 +3,7 @@ _ = require('wegweg')({
   globals: on
 })
 
+# create a new instance of trk
 Trk = require './../module'
 
 trk = new Trk {
@@ -35,6 +36,7 @@ trk = new Trk {
   }
 }
 
+# subfunctions to generate random event properties
 random_ip = (-> [_.rand(1,128),_.rand(0,255),_.rand(0,255),_.rand(0,255)].join('.'))
 random_arr = (a) -> _.first(_.shuffle a)
 
@@ -64,9 +66,13 @@ domains = [
   'example.com'
 ]
 
+# store events in an array before recording so we don't pervert the recording
+# elapsed duration
 data = []
 
-for x in [1..25000]
+num_events = 10000
+
+for x in [1..num_events]
   data.push {
     ip: random_ip()
     event: random_arr events
@@ -79,12 +85,28 @@ for x in [1..25000]
     ref_host: random_arr domains
   }
 
+# "synchronous", record events one after the other
 start = new Date
 
 for event_obj in data
   await trk.record event_obj, defer e,r
   if e then throw e
 
-log "Finished in #{new Date - start}ms"
+log "Finished recording #{num_events} events (series) in #{elapsed = new Date - start}ms "
+log "Series events digested/sec: #{num_events/(elapsed/1000)}"
+
+# parallel, record X at a time
+fns = []
+
+for event_obj in data
+  fns.push ((c) -> trk.record(event_obj,c))
+
+start = new Date
+await _.parl fns, 10, defer()
+
+log "Finished recording #{num_events} events (parallel_limit) in #{elapsed = new Date - start}ms"
+log "Parallel events digested/sec: #{num_events/(elapsed/1000)}"
+
+##
 process.exit 0
 

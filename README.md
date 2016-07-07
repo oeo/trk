@@ -29,7 +29,7 @@ bucket(y) reporting.
 
 ## limitations
 - no regression; the raw event is never stored, it is broken down and digested
-  into specific locations based on configuration only
+  into specific locations based on configuration and then is hair-flipped
 
 ## install
 
@@ -41,6 +41,17 @@ npm i trk --save
 
 ## usage
 examples located in `src/examples`
+
+## recording speed
+`build/examples/record-events.iced` on a mbp i7(3.1)/16gb
+
+```bash
+$ node record-events.js
+Finished recording 10000 events (series) in 7046ms
+Series events digested/sec: 1419.244961680386
+Finished recording 10000 events (parallel_limit) in 6449ms
+Parallel events digested/sec: 1550.6280043417585
+```
 
 ---
 
