@@ -12,17 +12,18 @@ strike a performant balance between real-time data and hierarchical time
 bucket(y) reporting.
 
 ## key concepts
-- events are recorded as objects, the only requirement is that they have an
+- events are recorded as objects (`.record()), the only requirement is that they have an
   `event` property
-- counters are modified on the fly into different areas as events come in
-- the granularity supported is _daily_
-- there are 4 types of recording configuration for events
+- redis counters are modified on the fly into different areas as events come in
+- the time granularity supported is _daily_
+- there are 4 types of configurable recording properties
   1. `bmp` _("bitmap")_ counts unique values occurrences for this key
   1. `add` counts number of occurrences for each value of this key
   1. `addv` _("add value")_ sum of the values for all occurrences of this key
-  1. `top` similar to `add` but returns the top occurrence values in order
+  1. `top` similar to `add` but returns the top occurrence values in order and
+     limits the result set to 250
 - an interface to query data the data over date ranges is supplied
-  (`.query()`,`.query_days()`) (see examples)
+  (`.query()`,`.query_days()`), see examples
 - querying does not require a config and can be done from other
   machines, recording requires a map configuration
 
