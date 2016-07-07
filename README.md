@@ -41,8 +41,8 @@ and for compound key combinations, if you choose to use them, like this
 </p>
 
 ## benefits
-- :zap: **recording events is fast** and can be done in a fire-and-forget fashion
-- :zap: **queries are fast** and can be done in real-time with no need for caching in
+- :zap: recording an event is _fast_ and can be done in a fire-and-forget fashion
+- :zap: queries are _fast_ and can be done in real-time with no need for caching in
   most cases
 
 ## limitations
