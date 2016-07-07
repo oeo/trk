@@ -1,0 +1,13 @@
+{
+  "name": "trk",
+  "description": "reserved name",
+  "version": "0.0.1",
+  "main": "./build/module.js",
+  "author": "douglas lauer <taky@taky.com>",
+  "repository": "tosadvisor/trk",
+  "keywords": [
+    "taky"
+  ],
+  "dependencies": {
+  }
+}
