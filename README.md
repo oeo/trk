@@ -23,7 +23,7 @@ npm i trk --save
 ## example
 
 ``` coffeescript
-
+Trk = require 'trk'
 ```
 
 
