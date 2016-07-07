@@ -1,5 +1,6 @@
-<p xalign="center">
-  <img src="https://taky.s3.amazonaws.com/81hnjcx0kog5.png" width="250">
+<p align="center">
+  <img src="https://taky.s3.amazonaws.com/61hnjexonow4.png" width="400">
+  _regression is forbidden_
 </p>
 
 `trk` is an event-based stats library that uses redis and memcached to store data.
