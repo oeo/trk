@@ -16,6 +16,7 @@ bucket(y) reporting.
   `event` property
 - redis counters are modified on the fly into different areas as events come in
 - the time granularity supported is _daily_
+- compound keys are supported by mapping them with a `~` delimiter
 - there are 4 types of configurable properties for recording events
   1. `bmp` _("bitmap")_ counts unique values occurrences for this key
   1. `add` counts number of occurrences for each value of this key
