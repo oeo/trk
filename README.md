@@ -23,7 +23,7 @@ bucket(y) reporting.
   1. `top` similar to `add` but returns the top occurrence values in order and
      limits the result set to 250
 - compound keys are supported by mapping them with a `~` delimiter
-- an interface to query data the data over date ranges is supplied
+- an interface to query data over date ranges is supplied
   (`.query()`,`.query_days()`), see examples
 - querying does not require a config and can be done from other
   machines, recording requires a map configuration
