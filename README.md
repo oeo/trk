@@ -31,7 +31,7 @@ bucket(y) reporting.
 the data structure in redis ends up looks something like this
 
 <p>
-  <img src="https://taky.s3.amazonaws.com/41hnmlp4xkoq.png" width="982">
+  <img src="https://taky.s3.amazonaws.com/21hnn3z4tgo5.png" width="982">
 </p>
 
 ## benefits
