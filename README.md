@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://taky.s3.amazonaws.com/61hnjexonow4.png" width="300"><br>
+  <img src="https://taky.s3.amazonaws.com/61hnjexonow4.png" width="250"><br>
   <i>regression is forbidden</i>
 </p>
 
