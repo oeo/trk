@@ -37,7 +37,7 @@ the data structure in redis ends up looks something like this
 and for compound key combinations, if you choose to use them, like this
 
 <p>
-  <img src="https://taky.s3.amazonaws.com/81hnnfy0zqg9.png" width="1116">
+  <img src="https://taky.s3.amazonaws.com/21hnnmjuyg0i.png" width="1116">
 </p>
 
 ## benefits
