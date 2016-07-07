@@ -12,11 +12,11 @@ strike a performant balance between real-time data and hierarchical time
 bucket(y) reporting.
 
 ## key concepts
-- events are recorded as objects (`.record()), the only requirement is that they have an
+- events are recorded as objects (`.record()`), the only requirement is it has an
   `event` property
 - redis counters are modified on the fly into different areas as events come in
 - the time granularity supported is _daily_
-- there are 4 types of configurable recording properties
+- there are 4 types of configurable properties for recording events
   1. `bmp` _("bitmap")_ counts unique values occurrences for this key
   1. `add` counts number of occurrences for each value of this key
   1. `addv` _("add value")_ sum of the values for all occurrences of this key
@@ -39,7 +39,7 @@ the data structure in redis ends up looks something like this
   most cases
 
 ## limitations
-- no regression; the raw event is never stored, it is broken down and digested
+- *no regression;* the raw event is never stored, it is broken down and digested
   into specific locations based on configuration and then is hair-flipped
 
 ## install
@@ -73,5 +73,4 @@ Parallel events digested/sec: 1550.6280043417585
 - tests
 - `map.bmp` elaboration (support compound fields)
 - data inflation routine for compound key result sets
-
 
