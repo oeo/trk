@@ -1,4 +1,6 @@
-<img src="https://taky.s3.amazonaws.com/01hni6gdje8q.png" width="1000">
+<center>
+  <img src="https://taky.s3.amazonaws.com/01hni6gdje8q.png" width="600">
+</center>
 
 # trk
 
