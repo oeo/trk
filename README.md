@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://taky.s3.amazonaws.com/61hnjexonow4.png" width="250"><br>
-  <i>regression is forbidden</i>
+  <i>regression is forbidden!</i>
 </p>
 
 # trk
@@ -12,7 +12,8 @@ strike a performant balance between real-time data and hierarchical time
 bucket(y) reporting.
 
 ## key concepts
-- events are recorded as objects requiring an `event` property
+- events are recorded as objects, the only requirement is that they have an
+  `event` property
 - counters are modified on the fly into different areas as events come in
 - the granularity supported is _daily_
 - there are 4 types of recording configuration for events
@@ -20,7 +21,16 @@ bucket(y) reporting.
   1. `add` counts number of occurrences for each value of this key
   1. `addv` _("add value")_ sum of the values for all occurrences of this key
   1. `top` similar to `add` but returns the top occurrence values in order
-- querying data does not require a configuration, only recording
+- an interface to query data the data over date ranges is supplied
+  (`.query()`,`.query_days()`) (see examples)
+- querying does not require a config and can be done from other
+  machines, recording requires a map configuration
+
+the data structure in redis ends up looks something like this
+
+<p>
+  <img src="https://taky.s3.amazonaws.com/41hnmlp4xkoq.png" width="982">
+</p>
 
 ## benefits
 - _recording events is fast_ and can be done in a fire-and-forget fashion
