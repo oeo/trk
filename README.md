@@ -5,6 +5,7 @@
 
 # trk
 `trk` is an event based stats library for node.js that uses redis as a data store.
+
 depending on the project, it can either be a total replacement for map/reduce
 routines, or, at the very least, a catalystic compliment that allows you to
 strike a performant balance between real-time data and hierarchical time
