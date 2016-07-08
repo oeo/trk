@@ -293,6 +293,7 @@ module.exports = class Metrics
         for location,item of results
           do (item) ->
             return if !ret[item.day]
+
             item.key = location.split(':').pop().split '~'
             ret[item.day].result.push item
 
@@ -482,6 +483,7 @@ module.exports = class Metrics
               await @memcached.set job.cache_key, job, 0, defer() if do_cache
 
               c null, job
+
     return fns
 
   # output formatting, creates and attached a filter function to easily
