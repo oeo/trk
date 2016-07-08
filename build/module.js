@@ -80,7 +80,7 @@
       }
       this.redis = (_ref = (_ref1 = opt.redis) != null ? _ref1 : opt.client) != null ? _ref : _.redis();
       this.memcached = (_ref2 = (_ref3 = opt.memcached) != null ? _ref3 : opt.memcached) != null ? _ref2 : _.memcached();
-      this.key = (_ref4 = (_ref5 = opt.key) != null ? _ref5 : opt.prefix) != null ? _ref4 : 'metrics';
+      this.key = (_ref4 = (_ref5 = opt.key) != null ? _ref5 : opt.prefix) != null ? _ref4 : 'tky';
       this.members_keys = new Members({
         redis: this.redis,
         prefix: this.key + ':k'
@@ -146,9 +146,7 @@
                   }
                 ];
                 return arr.push(function(c) {
-                  return async.waterfall(fns, function(e, r) {
-                    return c(null, r);
-                  });
+                  return async.waterfall(fns, c);
                 });
 
                 /*
@@ -237,11 +235,9 @@
           return _this.members_keys.add(today, keys_queue, c);
         };
       })(this));
-      arr.push(function(c) {
-        return m.exec(function(e, r) {
-          return c(null, r);
-        });
-      });
+      arr.push((function(c) {
+        return m.exec(c);
+      }));
       (function(_this) {
         return (function(__iced_k) {
           __iced_deferrals = new iced.Deferrals(__iced_k, {
@@ -256,7 +252,7 @@
                 return r = arguments[1];
               };
             })(),
-            lineno: 153
+            lineno: 147
           }));
           __iced_deferrals._fulfill();
         });
@@ -324,7 +320,7 @@
                 return r = arguments[1];
               };
             })(),
-            lineno: 203
+            lineno: 197
           }));
           __iced_deferrals._fulfill();
         });
@@ -450,7 +446,7 @@
                   return r2 = arguments[1];
                 };
               })(),
-              lineno: 285
+              lineno: 279
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -537,9 +533,7 @@
       afns = {};
       _fn1 = function(k, v) {
         return afns[k] = function(c) {
-          return _.par(fns[k], function(e, r) {
-            return c(e, r);
-          });
+          return _.par(fns[k], c);
         };
       };
       for (k in fns) {
@@ -554,7 +548,7 @@
           max: max,
           elapsed: "" + (new Date() - start) + "ms"
         };
-        if (Object.keys(r).length) {
+        if (_.keys(r).length) {
           _fn2 = (function(_this) {
             return function(k, v) {
               var key, stats, _results1;
@@ -650,7 +644,7 @@
                           return cache_r = arguments[1];
                         };
                       })(),
-                      lineno: 412
+                      lineno: 407
                     }));
                     __iced_deferrals._fulfill();
                   })(function() {
@@ -676,7 +670,7 @@
                           filename: "/Users/douglaslauer/www/trk/src/module.iced"
                         });
                         _this.memcached.set(job.cache_key, job, 0, __iced_deferrals.defer({
-                          lineno: 418
+                          lineno: 413
                         }));
                         __iced_deferrals._fulfill();
                       })(__iced_k);
@@ -709,7 +703,7 @@
                           return cache_r = arguments[1];
                         };
                       })(),
-                      lineno: 425
+                      lineno: 420
                     }));
                     __iced_deferrals._fulfill();
                   })(function() {
@@ -735,7 +729,7 @@
                           filename: "/Users/douglaslauer/www/trk/src/module.iced"
                         });
                         _this.memcached.set(job.cache_key, job, 0, __iced_deferrals.defer({
-                          lineno: 431
+                          lineno: 426
                         }));
                         __iced_deferrals._fulfill();
                       })(__iced_k);
@@ -767,7 +761,7 @@
                           return cache_r = arguments[1];
                         };
                       })(),
-                      lineno: 438
+                      lineno: 433
                     }));
                     __iced_deferrals._fulfill();
                   })(function() {
@@ -793,7 +787,7 @@
                           filename: "/Users/douglaslauer/www/trk/src/module.iced"
                         });
                         _this.memcached.set(job.cache_key, job, 0, __iced_deferrals.defer({
-                          lineno: 444
+                          lineno: 439
                         }));
                         __iced_deferrals._fulfill();
                       })(__iced_k);
@@ -825,7 +819,7 @@
                           return cache_r = arguments[1];
                         };
                       })(),
-                      lineno: 452
+                      lineno: 447
                     }));
                     __iced_deferrals._fulfill();
                   })(function() {
@@ -870,7 +864,7 @@
                           filename: "/Users/douglaslauer/www/trk/src/module.iced"
                         });
                         _this.memcached.set(job.cache_key, job, 0, __iced_deferrals.defer({
-                          lineno: 481
+                          lineno: 476
                         }));
                         __iced_deferrals._fulfill();
                       })(__iced_k);
@@ -981,7 +975,7 @@
               tot = {};
               arr = _.vals(ret);
               _fn = function(x) {
-                return tot = _.merge_numeric(tot, x);
+                return tot = merge_numeric(tot, x);
               };
               for (_k = 0, _len2 = arr.length; _k < _len2; _k++) {
                 x = arr[_k];
