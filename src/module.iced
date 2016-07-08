@@ -97,9 +97,7 @@ module.exports = class Metrics
         if obj[x]
           do (x) =>
             add_key = dkey + ':add:' + x
-
             keys_queue.push add_key
-
             m.hincrby add_key, obj[x], 1
 
     if @map.top?.length
@@ -110,9 +108,7 @@ module.exports = class Metrics
         if obj[x]
           do (x) =>
             set_key = dkey + ':top:' + x
-
             keys_queue.push set_key
-
             m.zincrby set_key, 1, obj[x]
 
     if @map.addv?.length
