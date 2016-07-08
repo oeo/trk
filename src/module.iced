@@ -147,9 +147,7 @@ module.exports = class Metrics
       @members_keys.add today, keys_queue, c
 
     # perform redis operations
-    arr.push (c) ->
-      m.exec (e,r) ->
-        c null, r
+    arr.push ((c) -> m.exec c)
 
     await _.par arr, defer e,r
 
