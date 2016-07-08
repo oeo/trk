@@ -11,7 +11,7 @@ routines, or, at the very least, a catalystic compliment that allows you to
 strike a performant balance between real-time data and hierarchical time
 bucket(y) reporting.
 
-## key concepts
+# key concepts
 - events are recorded as objects (`.record()`), the only requirement is it has an
   `event` property
 - redis counters are modified on the fly into different areas as events come in
@@ -40,16 +40,16 @@ and for compound key combinations, if you choose to use them, like this
   <img src="https://taky.s3.amazonaws.com/21hnnmjuyg0i.png" width="1116">
 </p>
 
-## benefits
-- :zap: recording an event is _fast_ and can be done in a fire-and-forget fashion
-- :zap: queries are _fast_ and can be done in real-time with no need for caching in
+# benefits
+- recording an event is :zap: fast and can be done in a fire-and-forget fashion
+- queries are :zap: fast and can be done in real-time with no need for caching in
   most cases
 
-## limitations
+# limitations
 - **no regression.** the raw event is never stored, it is broken down and digested
   into specific locations based on configuration and then is hair-flipped
 
-## install
+# install
 
 using [npm](https://npmjs.org)
 
@@ -57,10 +57,10 @@ using [npm](https://npmjs.org)
 npm i trk --save
 ```
 
-## usage
-examples located in `src/examples`
+# usage
+examples are located in `src/examples`
 
-## recording speed
+# recording speed
 `build/examples/record-events.iced` on a mbp i7(3.1)/16gb
 
 ```bash
@@ -71,12 +71,10 @@ Finished recording 10000 events (parallel_limit) in 6449ms
 Parallel events digested/sec: 1550.6280043417585
 ```
 
----
-
-#### inspiration
+# inspiration
 - [statsd](https://github.com/etsy/statsd)
 
-#### @todo
+# todo
 - tests
 - `map.bmp` elaboration (support compound fields)
 - data inflation routine for compound key result sets
