@@ -335,8 +335,7 @@ module.exports = class Metrics
       do (k,v) ->
 
         afns[k] = (c) ->
-          _.par fns[k], (e,r) ->
-            c e, r
+          _.par fns[k], c
 
     _.par afns, (e,r) ->
       out = {
