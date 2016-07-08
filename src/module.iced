@@ -339,11 +339,12 @@ module.exports = class Metrics
             c e, r
 
     _.par afns, (e,r) ->
-      out =
+      out = {
         days: {}
         min: min
         max: max
         elapsed: "#{new Date() - start}ms"
+      }
 
       if _.keys(r).length
         for k,v of r
