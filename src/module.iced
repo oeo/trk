@@ -23,7 +23,7 @@ module.exports = class Metrics
     @redis = opt.redis ? opt.client ? _.redis()
     @memcached = opt.memcached ? opt.memcached ? _.memcached()
 
-    @key = opt.key ? opt.prefix ? 'metrics'
+    @key = opt.key ? opt.prefix ? 'tky'
 
     @members_keys = new Members {
       redis: @redis
