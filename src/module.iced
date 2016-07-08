@@ -345,7 +345,7 @@ module.exports = class Metrics
         max: max
         elapsed: "#{new Date() - start}ms"
 
-      if Object.keys(r).length
+      if _.keys(r).length
         for k,v of r
           do (k,v) =>
             for key,stats of v
