@@ -558,7 +558,7 @@ module.exports = class Metrics
             arr = _.vals ret
             for x in arr
               do (x) ->
-                tot = _.merge_numeric tot, x
+                tot = merge_numeric tot, x
             tot
           else
             ret
