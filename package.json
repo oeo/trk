@@ -1,6 +1,6 @@
 {
   "name": "trk",
-  "description": "reserved name",
+  "description": "lightning fast redis-powered event based stats",
   "version": "0.0.1",
   "main": "./build/module.js",
   "author": "douglas lauer <taky@taky.com>",
