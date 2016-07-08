@@ -80,7 +80,7 @@ module.exports = class Metrics
               (i,c) => @redis.setbit bmp_key, i, 1, (e,r) -> c null, r
             ]
 
-            arr.push((c) -> async.waterfall fns, (e,r) -> c null, r)
+            arr.push((c) -> async.waterfall fns, c)
 
             ###
             # hyperloglog implementation; no noticable performance benefit
