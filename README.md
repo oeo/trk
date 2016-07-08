@@ -78,4 +78,5 @@ Parallel events digested/sec: 1550.6280043417585
 - tests
 - `map.bmp` elaboration (support compound fields)
 - data inflation routine for compound key result sets
+- winston implementation for debug logging
 
