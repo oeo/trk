@@ -1,7 +1,7 @@
 {
   "name": "trk",
   "description": "lightning fast redis-powered event based stats",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "./build/module.js",
   "author": "douglas lauer <taky@taky.com>",
   "repository": "tosadvisor/trk",
