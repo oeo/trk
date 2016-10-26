@@ -221,9 +221,9 @@
                 keys_queue.push(add_key);
                 keys_queue.push(tot_key);
                 if (label_key !== value_key) {
-                  m.hincrby(add_key, obj[label_key], pi(obj[value_key]));
+                  m.hincrby(add_key, obj[label_key], +obj[value_key]);
                 }
-                m.hincrby(tot_key, 'sum', pi(obj[value_key]));
+                m.hincrby(tot_key, 'sum', +obj[value_key]);
                 return m.hincrby(tot_key, 'count', 1);
               });
             })(this)(label_key, value_key);

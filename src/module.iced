@@ -133,9 +133,9 @@ module.exports = class Metrics
             keys_queue.push tot_key
 
             if label_key isnt value_key
-              m.hincrby add_key, obj[label_key], pi(obj[value_key])
+              m.hincrby add_key, obj[label_key], +(obj[value_key])
 
-            m.hincrby tot_key, 'sum', pi(obj[value_key])
+            m.hincrby tot_key, 'sum', +(obj[value_key])
             m.hincrby tot_key, 'count', 1
 
     # write key members for the current day
